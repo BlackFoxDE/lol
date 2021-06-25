@@ -22,6 +22,8 @@ while (true) {
 	var msg = execSync("curl http://whatthecommit.com/index.txt -s").toString();
 	fs.writeFileSync("random.txt", random(5000));
 
+	msg = msg.replace(/"/g, "");
+
 	execSync("git add *");
 	execSync("git commit -m \"" + msg + "\"");
 	//execSync("git push");
