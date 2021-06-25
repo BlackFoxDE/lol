@@ -22,5 +22,7 @@ while (true) {
 
 	execSync("git add *");
 	execSync("git commit -m \"" + msg + "\"");
-	execSync("git push");
+	//execSync("git push");
+
+	console.log("NEW COMMIT!");
 }
