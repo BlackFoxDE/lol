@@ -31,7 +31,7 @@ while (true) {
 
 		console.log("NEW COMMIT! " + count);
 
-		if(count % 100 == 0) {
+		if(count % 500 == 0) {
 			console.log("Pushing now!");
 			execSync("git push");
 		}
