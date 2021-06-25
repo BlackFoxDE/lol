@@ -1,0 +1,26 @@
+const fs = require("fs");
+
+const { execSync } = require("child_process");
+
+function random(length) {
+	// Declare all characters
+	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789öäüÖÄÜ";
+
+	// Pick characers randomly
+	let str = "";
+	for (let i = 0; i < length; i++) {
+		str += chars.charAt(Math.floor(Math.random() * chars.length));
+	}
+
+	return str;
+
+};
+
+while (true) {
+	var msg = execSync("curl http://whatthecommit.com/index.txt -s").toString();
+	fs.writeFileSync("random.txt", random(5000));
+
+	execSync("git add *");
+	execSync("git commit -m \"" + msg + "\"");
+	execSync("git push");
+}

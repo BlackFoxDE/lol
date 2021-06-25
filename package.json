@@ -1,0 +1,20 @@
+{
+  "name": "lol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "random.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackFoxDE/lol.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlackFoxDE/lol/issues"
+  },
+  "homepage": "https://github.com/BlackFoxDE/lol#readme"
+}
