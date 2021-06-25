@@ -25,7 +25,7 @@ while (true) {
 
 		msg = msg.replace(/"/g, "");
 
-		execSync("git add *");
+		execSync("git add .");
 		execSync("git commit -m \"" + msg + "\"");
 		//execSync("git push");
 
@@ -33,7 +33,7 @@ while (true) {
 
 		if(count % 500 == 0) {
 			console.log("Pushing now!");
-			execSync("git push");
+			execSync("cat .cred | git push");
 		}
 
 		count++;
