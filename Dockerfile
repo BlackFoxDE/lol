@@ -1,7 +1,7 @@
 FROM debian
 
 RUN apt update
-RUN apt install git node -y
+RUN apt install git nodejs -y
 
 COPY . /src
 
