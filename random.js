@@ -19,21 +19,25 @@ function random(length) {
 var count = 0;
 
 while (true) {
-	var msg = execSync("curl http://whatthecommit.com/index.txt -s").toString();
-	fs.writeFileSync("random.txt", random(5000));
+	try {
+		var msg = execSync("curl http://whatthecommit.com/index.txt -s").toString();
+		fs.writeFileSync("random.txt", random(5000));
 
-	msg = msg.replace(/"/g, "");
+		msg = msg.replace(/"/g, "");
 
-	execSync("git add *");
-	execSync("git commit -m \"" + msg + "\"");
-	//execSync("git push");
+		execSync("git add *");
+		execSync("git commit -m \"" + msg + "\"");
+		//execSync("git push");
 
-	console.log("NEW COMMIT! " + count);
+		console.log("NEW COMMIT! " + count);
 
-	if(count % 100 == 0) {
-		console.log("Pushing now!");
-		execSync("git push");
+		if(count % 100 == 0) {
+			console.log("Pushing now!");
+			execSync("git push");
+		}
+
+		count++;
+	} catch (_) {
+		console.log(_);
 	}
-
-	count++;
 }
