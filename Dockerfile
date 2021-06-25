@@ -10,3 +10,5 @@ WORKDIR /src
 RUN git config --global credential.helper 'store --file ~/.my-credentials'
 
 COPY .cred ~/.my-credentials
+
+ENTRYPOINT [ "node", "." ]
